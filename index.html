@@ -57,8 +57,8 @@ Image URL: <input type="text" id="Image" Value="http://image.s4.exct.net/lib/fe8
   function refresh() {
     
 
-  //var sdk = new window.sfdc.BlockSDK(); //initalize SDK
-  //sdk.setContent(""); //resets content block
+  var sdk = new window.sfdc.BlockSDK(); //initalize SDK
+  sdk.setContent(""); //resets content block
 
 var imgHeight = document.getElementById('height').value;
  var imgWidth = document.getElementById('width').value;
