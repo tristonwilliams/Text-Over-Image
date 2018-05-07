@@ -31,13 +31,13 @@
 <br />
 <table>
   <tr>
-<td>Image Height:</td><td> <input type="text" id="height" value="400px" onclick="refresh()"></td></tr>
+<td>Image Height:</td><td> <input type="text" id="height" value="400px" onchange="refresh()"></td></tr>
  <tr>
-<td>Image Width: </td><td><input type="text" id="width" value="600px" onclick="refresh()"></td></tr>
+<td>Image Width: </td><td><input type="text" id="width" value="600px" onchange="refresh()"></td></tr>
  <tr>
-<td>Text:</td><td> <input type="text" id="Text" Value="Text Over Image" onclick="refresh()"></td></tr>
+<td>Text:</td><td> <input type="text" id="Text" Value="Text Over Image" onchange="refresh()"></td></tr>
  <tr>
-<td>Image URL:</td><td> <input type="text" id="Image" Value="http://image.s4.exct.net/lib/fe8e1574746203787c/m/1/00b79af2-833a-4362-8c1a-81341a9079ce.jpg" onclick="refresh()"></td></tr></table>
+<td>Image URL:</td><td> <input type="text" id="Image" Value="http://image.s4.exct.net/lib/fe8f15737c62077a76/m/1/a9836fc9-54dc-434a-a09f-2b2ca88ce146.png" onchange="refresh()"></td></tr></table>
 </p>
 
 
@@ -57,16 +57,15 @@
     
 
  var sdk = new window.sfdc.BlockSDK(); //initalize SDK
-  sdk.setContent(""); //resets content block
+  //sdk.setContent(""); //resets content block
 
 var imgHeight = document.getElementById('height').value;
  var imgWidth = document.getElementById('width').value;
   var imgText = document.getElementById('Text').value;
    var imgURL = document.getElementById('Image').value;
 
-sdk.setContent("<table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td style='background-repeat:no-repeat;' background='" + imgURL + "' bgcolor='#ddf3e9' width='" + imgWidth + "' height='" + imgHeight + "' valign='top' class='bgresize'> <!--[if gte mso 9]> <v:rect xmlns:v='urn:schemas-microsoft-com:vml' fill='true' stroke='false' style='background-repeat:no-repeat; width:" + imgWidth + ";height:" + imgHeight + ";'> <v:fill type='tile' src='" + imgURL + "' color='#ddf3e9' /> <v:textbox inset='0,0,0,0'> <![endif]--> <div> <table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td width='30' align='left' valign='top' style='font-size: 0%;' class='mobile-hidden'></td> <td align='left' valign='top' class='mobile-padding'><table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td align='left' valign='top' style='padding-top: 95px;color: #000000; padding-left: 100px; padding-right: 100px; font-size: 48px;' class='padding65'><span class='banner-heading55'>" + imgText + "</span></td> </tr> </tbody> </table></td> <td width='30' align='left' valign='top' class='mobile-hidden' style='font-size: 0%;'></td> </tr> </tbody> </table> </div> <!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]--> </td> </tr> </tbody> </table>");
+sdk.setContent("<table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td style='background-repeat:no-repeat;' background='" + imgURL + "' bgcolor='#ddf3e9' width='" + imgWidth + "' height='" + imgHeight + "' valign='top' class='bgresize'> <!--[if gte mso 9]> <v:rect xmlns:v='urn:schemas-microsoft-com:vml' fill='true' stroke='false' style='background-repeat:no-repeat; width:" + imgWidth + ";height:" + imgHeight + ";'> <v:fill type='tile' src='" + imgURL + "' color='#ddf3e9' /> <v:textbox inset='0,0,0,0'> <![endif]--> <div> <table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td width='30' align='left' valign='top' style='font-size: 0%;' class='mobile-hidden'></td> <td align='left' valign='top' class='mobile-padding'><table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td align='left' valign='top' style='padding-top: 95px;color: #000000; padding-left: 100px; padding-right: 100px; font-size: 48px;' class='padding65'><span class='banner-heading55'><center>" + imgText + "</center></span></td> </tr> </tbody> </table></td> <td width='30' align='left' valign='top' class='mobile-hidden' style='font-size: 0%;'></td> </tr> </tbody> </table> </div> <!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]--> </td> </tr> </tbody> </table>");
 
-//alert(textstr); //test
 
 }
 
