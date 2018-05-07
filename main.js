@@ -79,12 +79,9 @@ if (window.self === window.top) {
 	var toolbarOptions = [
 		['bold', 'italic', 'underline', 'strike'],
 		['blockquote', 'code-block'],
-		[{ 'list': 'ordered'}, { 'list': 'bullet' }],
-		[{ 'indent': '-1'}, { 'indent': '+1' }],
 		[{ 'header': [1, 2, 3, 4, 5, 6, false] }],
 		[{ 'color': [] }, { 'background': [] }],
 		['clean'],
-		['link'],
 		['showHtml']
 	];
 
@@ -112,11 +109,11 @@ var imgHeight = document.getElementById('height').value;
 			sdk.setContent(persist);
 			
 			
-			sdk.setSuperContent(persist);
+			//sdk.setSuperContent(persist);
 
 			
 			//sdk.setContent(html);
-			//sdk.setSuperContent(html);
+			sdk.setSuperContent(html);
 
 			sdk.getData(function (data) {
 				var numberOfEdits = data.numberOfEdits || 0;
