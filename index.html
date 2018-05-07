@@ -54,9 +54,6 @@ Image URL: <input type="text" id="Image" Value="http://image.s4.exct.net/lib/fe8
 
 
 
-
-
-function chosen(imgId) {
   
 
   var sdk = new window.sfdc.BlockSDK(); //initalize SDK
@@ -68,19 +65,9 @@ var imgHeight = document.getElementById('height').text;
    var imgURL = document.getElementById('Image').text;
 
 
-  var fit = document.getElementById('scaleFit').checked;
-  var acenter = document.getElementById('alignCenter').checked;
   
-  selectedImageId = imgId;
-
   
-
-
-  if(imgId != ""){
-    image = document.getElementById(imgURL).text;
-  }
-
-  //alert(image); //test
+  
 
   
     sdk.setContent("<img width='100%' src='http://image.s4.exct.net/lib/fe8e1574746203787c/m/1/00b79af2-833a-4362-8c1a-81341a9079ce.jpg'/>");
@@ -88,10 +75,6 @@ var imgHeight = document.getElementById('height').text;
 
 
 
-
-
-
-}
 
 
       
