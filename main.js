@@ -102,7 +102,7 @@ if (window.self === window.top) {
 		 var imgWidth;
 		 var imgURL;
 		
-		 if(imgURL != ""){
+		 if(imgURL = ""){
     imgURL  = document.getElementById('Image').value;
   }
 		
