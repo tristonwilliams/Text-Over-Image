@@ -29,11 +29,15 @@
 
 <h1>Text Over Image Block</h1>
 <br />
-
-Image Height: <input type="text" id="height" value="400px" onclick="refresh()"><br />
-Image Width: <input type="text" id="width" value="600px" onclick="refresh()"><br />
-Text: <input type="text" id="Text" Value="Text Over Image" onclick="refresh()"><br />
-Image URL: <input type="text" id="Image" Value="http://image.s4.exct.net/lib/fe8e1574746203787c/m/1/00b79af2-833a-4362-8c1a-81341a9079ce.jpg" onclick="refresh()"><br />
+<table>
+  <tr>
+<td>Image Height:</td><td> <input type="text" id="height" value="400px" onclick="refresh()"></td></tr>
+ <tr>
+<td>Image Width: </td><td><input type="text" id="width" value="600px" onclick="refresh()"></td></tr>
+ <tr>
+<td>Text:</td><td> <input type="text" id="Text" Value="Text Over Image" onclick="refresh()"></td></tr>
+ <tr>
+<td>Image URL:</td><td> <input type="text" id="Image" Value="http://image.s4.exct.net/lib/fe8e1574746203787c/m/1/00b79af2-833a-4362-8c1a-81341a9079ce.jpg" onclick="refresh()"></td></tr></table>
 </p>
 
 
@@ -65,7 +69,7 @@ var imgHeight = document.getElementById('height').value;
   var imgText = document.getElementById('Text').value;
    var imgURL = document.getElementById('Image').value;
 
-sdk.setContent("<table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td background='" + imgURL + "' bgcolor='#ddf3e9' width='" + imgWidth + "' height='" + imgHeight + "' valign='top' class='bgresize'> <!--[if gte mso 9]> <v:rect xmlns:v='urn:schemas-microsoft-com:vml' fill='true' stroke='false' style='width:600px;height:300px;'> <v:fill type='tile' src='" + imgURL + "' color='#ddf3e9' /> <v:textbox inset='0,0,0,0'> <![endif]--> <div> <table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td width='30' align='left' valign='top' style='font-size: 0%;' class='mobile-hidden'><img src='Spacer.gif' width='30' height='1' style='display: block;' border='0'/></td> <td align='left' valign='top' class='mobile-padding'><table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td align='left' valign='top' style='padding-top: 95px;color: #ffffff; padding-left: 50px; padding-right: 50px' class='padding65'><span class='banner-heading55'>" + imgText + "</span></td> </tr> </tbody> </table></td> <td width='30' align='left' valign='top' class='mobile-hidden' style='font-size: 0%;'><img src='Spacer.gif' width='30' height='1' style='display: block;' border='0'/></td> </tr> </tbody> </table> </div> <!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]--> </td> </tr> </tbody> </table>");
+sdk.setContent("<table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td background='" + imgURL + "' bgcolor='#ddf3e9' width='" + imgWidth + "' height='" + imgHeight + "' valign='top' class='bgresize'> <!--[if gte mso 9]> <v:rect xmlns:v='urn:schemas-microsoft-com:vml' fill='true' stroke='false' style='width:" + imgWidth + ";height:" + imgHeight + ";'> <v:fill type='tile' src='" + imgURL + "' color='#ddf3e9' /> <v:textbox inset='0,0,0,0'> <![endif]--> <div> <table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td width='30' align='left' valign='top' style='font-size: 0%;' class='mobile-hidden'><img src='Spacer.gif' width='30' height='1' style='display: block;' border='0'/></td> <td align='left' valign='top' class='mobile-padding'><table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td align='left' valign='top' style='padding-top: 95px;color: #ffffff; padding-left: 50px; padding-right: 50px' class='padding65'><span class='banner-heading55'>" + imgText + "</span></td> </tr> </tbody> </table></td> <td width='30' align='left' valign='top' class='mobile-hidden' style='font-size: 0%;'><img src='Spacer.gif' width='30' height='1' style='display: block;' border='0'/></td> </tr> </tbody> </table> </div> <!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]--> </td> </tr> </tbody> </table>");
 
 //alert(textstr); //test
 
