@@ -24,16 +24,15 @@
 <body>
 
 
-<p class="ctstyle" align="center">
-<img width="80%" src="http://image.s4.exct.net/lib/fe8e1574746203787c/m/1/6bc4b8b8-19f2-41d3-8081-129b7b5a01c8.png" />
-<br />
+<p class="ctstyle" align="left">
+
 
 Text Over Image Block
 <br />
 
-	<span class="itemlist" style="padding-left: 10px;padding-right: 10px;"	Image Height: </span><input type="text" id="height" value="400px"><br />
-<span class="itemlist" style="padding-left: 10px;padding-right: 10px;"Image Width:</span> <input type="text" id="width" value="600px>"<br />
-<span class="itemlist" style="padding-left: 10px;padding-right: 10px;"Text:</span> <input type="text" id="Text" Value="Text Over Image">
+<span class="itemlist" style="padding-left: 10px;padding-right: 10px;"	Image Height: </span><input type="text" id="height" value="400px"><br />
+<span class="itemlist" style="padding-left: 10px;padding-right: 10px;"Image Width:</span> <input type="text" id="width" value="600px"><br />
+<span class="itemlist" style="padding-left: 10px;padding-right: 10px;"Text:</span> <input type="text" id="Text" Value="Text Over Image"><br />
 </p>
 
 
@@ -76,31 +75,31 @@ function chosen(imgId) {
   
 
   var sdk = new window.sfdc.BlockSDK(); //initalize SDK
-  sdk.setContent(""); //resets content block
+  sdk.setContent("blah"); //resets content block
 
-  var fit = document.getElementById('scaleFit').checked;
-  var acenter = document.getElementById('alignCenter').checked;
+ // var fit = document.getElementById('scaleFit').checked;
+ // var acenter = document.getElementById('alignCenter').checked;
   
   selectedImageId = imgId;
 
-  if(imgId != ""){
-    image = document.getElementById(imgId).src;
+ // if(imgId != ""){
+    //image = document.getElementById(imgId).src;
   }
 
   //alert(image); //test
 
-  if(fit){
+  //if(fit){
     sdk.setContent("<img width='100%' src='" + image + "'/>");
 
-  }else{
+//  }else{
         
-    if(acenter){
+ //   if(acenter){
         sdk.setContent("<center><img src='" + image + "'/></center>");
       
-      }else{
+   //   }else{
       sdk.setContent("<img src='" + image + "'/>");
    
-    }
+   // }
   }
 }
       
