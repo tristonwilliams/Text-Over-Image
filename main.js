@@ -90,8 +90,11 @@ if (window.self === window.top) {
 	  theme: 'snow'
 	});
 
-	var sdk = new BlockSDK(['blocktester.herokuapp.com', 'localhost', 'marketingcloudapps.com'], true);
+	
 
+	var sdk = new window.sfdc.BlockSDK(); //initalize SDK
+  sdk.setContent(""); //resets content block
+	
 	sdk.getContent(function (content) {
 		var imgHeight = document.getElementById('height').value;
  var imgWidth = document.getElementById('width').value;
