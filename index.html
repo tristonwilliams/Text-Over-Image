@@ -1,78 +1,27 @@
+<!DOCTYPE html>
 <html>
-
-<head>
-  
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-<style>
- .ctstyle{
-  font-family: Verdana;
-  font-size: 14px;
-
- }
-
-.itemlist{
- font-size: 12px;
-}
-</style>
-
-</head>
-
-<body onload="refresh()" style="padding:10px" >
-
-
-<p class="ctstyle" align="left">
-
-
-<h1>Text Over Image Block</h1>
-<br />
-<table>
+    <head>
+        <!-- Main Quill library -->
+        <script src="//cdn.quilljs.com/1.1.6/quill.js"></script>
+        <!-- Theme included stylesheets -->
+        <link href="//cdn.quilljs.com/1.1.6/quill.snow.css" rel="stylesheet">
+        <link href="//cdn.quilljs.com/1.1.6/quill.bubble.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+<table style="font-family: Arial;">
   <tr>
-<td>Image Height:</td><td> <input type="text" id="height" value="400px" onchange="refresh()"></td></tr>
+<td>Image Height:</td><td> <input type="text" id="height" value="400px" ></td></tr>
  <tr>
-<td>Image Width: </td><td><input type="text" id="width" value="600px" onchange="refresh()"></td></tr>
+<td>Image Width: </td><td><input type="text" id="width" value="600px" ></td></tr>
  <tr>
-<td>Text:</td><td> <input type="text" id="Text" Value="Text Over Image Block" onchange="refresh()"></td></tr>
- <tr>
-<td>Image URL:</td><td> <input type="text" id="Image" Value="http://image.s4.exct.net/lib/fe8f15737c62077a76/m/1/a9836fc9-54dc-434a-a09f-2b2ca88ce146.png" onchange="refresh()"></td></tr></table>
-</p>
-
-
-
- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
-
-  <script src="/blocksdk.js"></script>
-
-  <script>
-
-
-  function refresh() {
-    
-
- var sdk = new window.sfdc.BlockSDK(); //initalize SDK
-  //sdk.setContent(""); //resets content block
-
-var imgHeight = document.getElementById('height').value;
- var imgWidth = document.getElementById('width').value;
-  var imgText = document.getElementById('Text').value;
-   var imgURL = document.getElementById('Image').value;
-    
+<td>Image URL:</td><td> <input type="text" id="Image" Value="http://image.s4.exct.net/lib/fe8f15737c62077a76/m/1/a9836fc9-54dc-434a-a09f-2b2ca88ce146.png" ></td></tr>
 
 	
-      sdk.setContent("<table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td style='background-repeat:no-repeat;' background='" + imgURL + "' bgcolor='#ddf3e9' width='" + imgWidth + "' height='" + imgHeight + "' valign='top' class='bgresize'> <!--[if gte mso 9]> <v:rect xmlns:v='urn:schemas-microsoft-com:vml' fill='true' stroke='false' style='background-repeat:no-repeat; width:" + imgWidth + ";height:" + imgHeight + ";'> <v:fill type='tile' src='" + imgURL + "' color='#ddf3e9' /> <v:textbox inset='0,0,0,0'> <![endif]--> <div> <table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td width='30' align='left' valign='top' style='font-size: 0%;' class='mobile-hidden'></td> <td align='left' valign='top' class='mobile-padding'><table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td align='left' valign='top' style='padding-top: 95px;color: #000000; padding-left: 100px; padding-right: 100px; font-size: 48px;' class='padding65'><span class='banner-heading55'><center>" + imgText + "</center></span></td> </tr> </tbody> </table></td> <td width='30' align='left' valign='top' class='mobile-hidden' style='font-size: 0%;'></td> </tr> </tbody> </table> </div> <!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]--> </td> </tr> </tbody> </table>");
-
-
-}
-      
-    </script>
-</body>
+        <div id="editor-container">
+		        
+	</table>
+        </div>
+        <script src="main.js"></script>
+    </body>
 </html>
-
-
