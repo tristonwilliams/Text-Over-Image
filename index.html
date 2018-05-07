@@ -51,7 +51,7 @@ Image URL: <input type="text" id="Image" Value="http://image.s4.exct.net/lib/fe8
 
   <script>
 
-    var selectedImageId
+
 
 function chosen() {
   
@@ -63,43 +63,34 @@ function chosen() {
  var imgWidth = document.getElementById('width').text;
   var imgText = document.getElementById('Text').text;
    var imgURL = document.getElementById('Image').text;
-  
-  //selectedImageId = imgId;
-
- // if(imgId != ""){
-    //image = document.getElementById(imgId).src;
-  }
-
-  //alert(image); //test
-
-  //if(fit){
-    sdk.setContent("<img width='100%' src='" + image + "'/>
 
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+ 
+    sdk.setContent("
+<table width='100%' border='0' cellspacing='0' cellpadding='0'>
                 <tbody>
                   <tr>
-                    <td background="BACKGROUND_IMAGE.jpg" bgcolor="#ddf3e9" width="600" height="300" valign="top" class="bgresize">
+                    <td background='BACKGROUND_IMAGE.jpg' bgcolor='#ddf3e9' width='600' height='300' valign='top' class='bgresize'>
 
 <!--[if gte mso 9]>
-  <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:300px;">
-    <v:fill type="tile" src="BACKGROUND_IMAGE.jpg" color="#ddf3e9" />
-    <v:textbox inset="0,0,0,0">
+  <v:rect xmlns:v='urn:schemas-microsoft-com:vml' fill='true' stroke='false' style='width:600px;height:300px;'>
+    <v:fill type='tile' src='BACKGROUND_IMAGE.jpg' color='#ddf3e9' />
+    <v:textbox inset='0,0,0,0'>
   <![endif]-->
 
                       <div>
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <table width='100%' border='0' cellspacing='0' cellpadding='0'>
                           <tbody>
                             <tr>
-                              <td width="30" align="left" valign="top" style="font-size: 0%;" class="mobile-hidden"><img src="Spacer.gif" width="30" height="1" style="display: block;" border="0"/></td>
-                              <td align="left" valign="top" class="mobile-padding"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <td width='30' align='left' valign='top' style='font-size: 0%;' class='mobile-hidden'><img src='Spacer.gif' width='30' height='1' style='display: block;' border='0'/></td>
+                              <td align='left' valign='top' class='mobile-padding'><table width='100%' border='0' cellspacing='0' cellpadding='0'>
                                   <tbody>
                                     <tr>
-                                      <td align="left" valign="top" style="padding-top: 95px;" class="padding65"><span class="banner-heading55">THE TEXT ON TOP OF IMAGE</span></td>
+                                      <td align='left' valign='top' style='padding-top: 95px;' class='padding65'><span class='banner-heading55'>THE TEXT ON TOP OF IMAGE</span></td>
                                     </tr>
                                   </tbody>
                                 </table></td>
-                              <td width="30" align="left" valign="top" class="mobile-hidden" style="font-size: 0%;"><img src="Spacer.gif" width="30" height="1" style="display: block;" border="0"/></td>
+                              <td width='30' align='left' valign='top' class='mobile-hidden' style='font-size: 0%;'><img src='Spacer.gif' width='30' height='1' style='display: block;' border='0'/></td>
                             </tr>
                           </tbody>
                         </table>
@@ -114,11 +105,13 @@ function chosen() {
                   </tr>
                 </tbody>
               </table>
+
+
 ");
 
 
   }
-}
+
       
     </script>
 </body>
