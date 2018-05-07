@@ -53,23 +53,49 @@ Image URL: <input type="text" id="Image" Value="http://image.s4.exct.net/lib/fe8
 
 
 
-function chosen() {
+
+
+
+
+    var selectedImageId, image;
+
+function chosen(imgId) {
   
 
   var sdk = new window.sfdc.BlockSDK(); //initalize SDK
-  sdk.setContent("blah"); //resets content block
+  sdk.setContent(""); //resets content block
 
- var imgHeight = document.getElementById('height').text;
+var imgHeight = document.getElementById('height').text;
  var imgWidth = document.getElementById('width').text;
   var imgText = document.getElementById('Text').text;
    var imgURL = document.getElementById('Image').text;
 
 
- 
-    sdk.setContent("Blah");
+  var fit = document.getElementById('scaleFit').checked;
+  var acenter = document.getElementById('alignCenter').checked;
+  
+  selectedImageId = imgId;
+
+  
 
 
+  if(imgId != ""){
+    image = document.getElementById(imgURL).text;
   }
+
+  //alert(image); //test
+
+  
+    sdk.setContent("<img width='100%' src='" + image + "'/>");
+
+
+
+
+
+
+
+}
+
 
       
     </script>
