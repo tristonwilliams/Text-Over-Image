@@ -27,34 +27,16 @@
 <p class="ctstyle" align="left">
 
 
-Text Over Image Block
+<h1>Text Over Image Block</h1>
 <br />
 
-<span class="itemlist" style="padding-left: 10px;padding-right: 10px;"	Image Height: </span><input type="text" id="height" value="400px"><br />
-<span class="itemlist" style="padding-left: 10px;padding-right: 10px;"Image Width:</span> <input type="text" id="width" value="600px"><br />
-<span class="itemlist" style="padding-left: 10px;padding-right: 10px;"Text:</span> <input type="text" id="Text" Value="Text Over Image"><br />
+Image Height: <input type="text" id="height" value="400px"><br />
+Image Width: <input type="text" id="width" value="600px"><br />
+Text: <input type="text" id="Text" Value="Text Over Image"><br />
+Image URL: <input type="text" id="Image" Value="http://image.s4.exct.net/lib/fe8e1574746203787c/m/1/00b79af2-833a-4362-8c1a-81341a9079ce.jpg"><br />
 </p>
 
 
-
-
-  <div >
-    <div class="list-group" id="list-tab" role="tablist">
-          <a class="list-group-item list-group-item-action ctstyle itemlist" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home" onclick="javascript:chosen('image1')"><image width="20%" id="image1" src="http://image.s4.exct.net/lib/fe8e1574746203787c/m/1/00b79af2-833a-4362-8c1a-81341a9079ce.jpg" /> <span style="padding-left: 20px">Image 1</span></a>
-
-          <a class="list-group-item list-group-item-action ctstyle itemlist" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home" onclick="javascript:chosen('image2')" ><image width="20%" id="image2" src="http://image.s4.exct.net/lib/fe8e1574746203787c/m/1/2a17ae38-47ad-4e0d-8532-a1895c971bc2.jpg" /><span style="padding-left: 20px">Image 2</span></a>
-
-          <a class="list-group-item list-group-item-action ctstyle itemlist" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home" onclick="javascript:chosen('image3')"><image width="20%" id="image3" src="http://image.s4.exct.net/lib/fe8e1574746203787c/m/1/3b943978-c1b1-42e9-b7bc-a43ad26c583c.jpg" /> <span style="padding-left: 20px">Image 3</span></a>
-
-          <a class="list-group-item list-group-item-action ctstyle itemlist" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home" onclick="javascript:chosen('image4')"><image width="20%" id="image4" src="http://image.s4.exct.net/lib/fe8e1574746203787c/m/1/cb4df285-72be-41ea-a4b2-ecf3ce48f4fe.jpg" /> <span style="padding-left: 20px">Image 4</span></a>
-
-          <a class="list-group-item list-group-item-action ctstyle itemlist" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home" onclick="javascript:chosen('image5')"><image width="20%" id="image5" src="http://image.s4.exct.net/lib/fe8e1574746203787c/m/1/fc895092-8200-4983-b77d-179d2a37d3f6.jpg" /> <span style="padding-left: 20px">Image 5</span></a>
-
-          <a class="list-group-item list-group-item-action ctstyle itemlist" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home" onclick="javascript:chosen('image6')"><image width="20%" id="image6" src="http://image.s4.exct.net/lib/fe8e1574746203787c/m/1/d751bead-2a14-4b3e-8f68-c8274a7a111a.jpg" /> <span style="padding-left: 20px">Image 6</span></a>
-       </div>
-  </div>
-
-</div>
 
 
 
@@ -69,18 +51,20 @@ Text Over Image Block
 
   <script>
 
-    var selectedImageId, image;
+    var selectedImageId
 
-function chosen(imgId) {
+function chosen() {
   
 
   var sdk = new window.sfdc.BlockSDK(); //initalize SDK
   sdk.setContent("blah"); //resets content block
 
- // var fit = document.getElementById('scaleFit').checked;
- // var acenter = document.getElementById('alignCenter').checked;
+ var imgHeight = document.getElementById('height').text;
+ var imgWidth = document.getElementById('width').text;
+  var imgText = document.getElementById('Text').text;
+   var imgURL = document.getElementById('Image').text;
   
-  selectedImageId = imgId;
+  //selectedImageId = imgId;
 
  // if(imgId != ""){
     //image = document.getElementById(imgId).src;
@@ -89,17 +73,50 @@ function chosen(imgId) {
   //alert(image); //test
 
   //if(fit){
-    sdk.setContent("<img width='100%' src='" + image + "'/>");
+    sdk.setContent("<img width='100%' src='" + image + "'/>
 
-//  }else{
-        
- //   if(acenter){
-        sdk.setContent("<center><img src='" + image + "'/></center>");
-      
-   //   }else{
-      sdk.setContent("<img src='" + image + "'/>");
-   
-   // }
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td background="BACKGROUND_IMAGE.jpg" bgcolor="#ddf3e9" width="600" height="300" valign="top" class="bgresize">
+
+<!--[if gte mso 9]>
+  <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:300px;">
+    <v:fill type="tile" src="BACKGROUND_IMAGE.jpg" color="#ddf3e9" />
+    <v:textbox inset="0,0,0,0">
+  <![endif]-->
+
+                      <div>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tbody>
+                            <tr>
+                              <td width="30" align="left" valign="top" style="font-size: 0%;" class="mobile-hidden"><img src="Spacer.gif" width="30" height="1" style="display: block;" border="0"/></td>
+                              <td align="left" valign="top" class="mobile-padding"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tbody>
+                                    <tr>
+                                      <td align="left" valign="top" style="padding-top: 95px;" class="padding65"><span class="banner-heading55">THE TEXT ON TOP OF IMAGE</span></td>
+                                    </tr>
+                                  </tbody>
+                                </table></td>
+                              <td width="30" align="left" valign="top" class="mobile-hidden" style="font-size: 0%;"><img src="Spacer.gif" width="30" height="1" style="display: block;" border="0"/></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!--[if gte mso 9]>
+    </v:textbox>
+  </v:rect>
+  <![endif]-->
+
+                  </td>
+                  </tr>
+                </tbody>
+              </table>
+");
+
+
   }
 }
       
