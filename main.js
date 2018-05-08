@@ -89,7 +89,7 @@ if (window.self === window.top) {
 
 	sdk.getContent(function (content) {
 		
-		ar html = quill.root.innerHTML;
+		var html = quill.root.innerHTML;
 				var imgHeight = "400px";
 		 		var imgWidth = "600px";
 				 var imgURL = "http://image.s4.exct.net/lib/fe8f15737c62077a76/m/1/a9836fc9-54dc-434a-a09f-2b2ca88ce146.png";
