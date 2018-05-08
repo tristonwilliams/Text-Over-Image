@@ -65,21 +65,22 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ 
-	
-	
-	(function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 var BlockSDK = __webpack_require__(1);
 
 if (window.self === window.top) {
-	document.body.
-	Text = 'This application is for use in the Salesforce Marketing Cloud Content Builder Editor only.';
+	document.body.innerText = 'This application is for use in the Salesforce Marketing Cloud Content Builder Editor only.';
 } else {
 	var toolbarOptions = [
-		['bold', 'italic', 'underline'],
+		['bold', 'italic', 'underline', 'strike'],
+		['blockquote', 'code-block'],
+		[{ 'list': 'ordered'}, { 'list': 'bullet' }],
+		[{ 'indent': '-1'}, { 'indent': '+1' }],
+		[{ 'header': [1, 2, 3, 4, 5, 6, false] }],
 		[{ 'color': [] }, { 'background': [] }],
 		['clean'],
+		['link', 'image', 'video'],
 		['showHtml']
 	];
 
@@ -90,32 +91,15 @@ if (window.self === window.top) {
 	  theme: 'snow'
 	});
 
-	
+	var sdk = new BlockSDK(['blocktester.herokuapp.com', 'localhost', 'marketingcloudapps.com'], true);
 
-	var sdk = new window.sfdc.BlockSDK(); //initalize SDK
-  sdk.setContent(""); //resets content block
-	
 	sdk.getContent(function (content) {
-		
-		 var html = quill.root.innerHTML;
-		var imgHeight;
-		 var imgWidth;
-		 var imgURL;
-		
-
-
-var persist1 = "<table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td style='background-repeat:no-repeat;' background='" + imgURL + "' bgcolor='#ddf3e9' width='" + imgWidth + "' height='" + imgHeight + "' valign='top' class='bgresize'> <!--[if gte mso 9]> <v:rect xmlns:v='urn:schemas-microsoft-com:vml' fill='true' stroke='false' style='background-repeat:no-repeat; width:" + imgWidth + ";height:" + imgHeight + ";'> <v:fill type='tile' src='" + imgURL + "' color='#ddf3e9' /> <v:textbox inset='0,0,0,0'> <![endif]--> <div> <table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td width='30' align='left' valign='top' style='font-size: 0%;' class='mobile-hidden'></td> <td align='left' valign='top' class='mobile-padding'><table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td align='left' valign='top' style='padding-top: 95px;color: #000000; padding-left: 100px; padding-right: 100px; font-size: 48px;' class='padding65'><span class='banner-heading55'><center>" + html + "</center></span></td> </tr> </tbody> </table></td> <td width='30' align='left' valign='top' class='mobile-hidden' style='font-size: 0%;'></td> </tr> </tbody> </table> </div> <!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]--> </td> </tr> </tbody> </table>"
-			
-html = content
+		quill.root.innerHTML = content;
 
 		function saveText() {
 			var html = quill.root.innerHTML;
-
 			sdk.setContent(html);
-			
-			
 			sdk.setSuperContent(html);
-
 
 			sdk.getData(function (data) {
 				var numberOfEdits = data.numberOfEdits || 0;
