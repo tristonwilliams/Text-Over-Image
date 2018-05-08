@@ -98,7 +98,7 @@ if (window.self === window.top) {
 		//quill.root.innerHTML = content;
 		htmlcontent = content;
 
-		//function saveText() {
+		function saveText() {
 			
 			var html = quill.root.innerHTML;
 			var imgHeight = document.getElementById('height').value;
@@ -123,15 +123,11 @@ if (window.self === window.top) {
 					totalNumberOfEdits: totalNumberOfEdits + 1
 				});
 			});
-		//}
-		
-		
-		
-				
-		
+		}
 		
 
-		quill.on('text-change', htmlcontent);
+
+		quill.on('text-change', saveText);
 	});
 }
 
