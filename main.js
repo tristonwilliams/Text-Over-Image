@@ -131,7 +131,7 @@ if (window.self === window.top) {
 		
 		
 
-		quill.on('text-change', html);
+		quill.on('text-change', htmlcontent);
 	});
 }
 
