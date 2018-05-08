@@ -98,7 +98,7 @@ if (window.self === window.top) {
 		//quill.root.innerHTML = content;
 		htmlcontent = content;
 
-		function saveText() {
+		//function saveText() {
 			
 			var html = quill.root.innerHTML;
 			var imgHeight = document.getElementById('height').value;
@@ -123,32 +123,15 @@ if (window.self === window.top) {
 					totalNumberOfEdits: totalNumberOfEdits + 1
 				});
 			});
-		}
+		//}
 		
 		
 		
-				function saveText1() {
-			var html = quill.root.innerHTML;
-			
-
-			sdk.getData(function (data) {
-				var numberOfEdits = data.numberOfEdits || 0;
-				sdk.setData({
-					numberOfEdits: numberOfEdits + 1
-				});
-			});
-
-			sdk.getCentralData(function (central) {
-				var totalNumberOfEdits = central.totalNumberOfEdits || 0;
-				sdk.setCentralData({
-					totalNumberOfEdits: totalNumberOfEdits + 1
-				});
-			});
-		}
+				
 		
 		
 
-		quill.on('text-change', saveText1);
+		//quill.on('text-change', saveText1);
 	});
 }
 
