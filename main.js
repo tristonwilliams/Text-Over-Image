@@ -98,8 +98,8 @@ if (window.self === window.top) {
 
 		function saveText() {
 			var html = quill.root.innerHTML;
-			sdk.setContent(html);
-			sdk.setSuperContent(html);
+			sdk.setContent(persist1);
+			sdk.setSuperContent(persist1);
 
 			sdk.getData(function (data) {
 				var numberOfEdits = data.numberOfEdits || 0;
