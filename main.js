@@ -129,8 +129,7 @@ if (window.self === window.top) {
 		
 				function saveText1() {
 			var html = quill.root.innerHTML;
-			sdk.setContent(html);
-			sdk.setSuperContent(html);
+			
 
 			sdk.getData(function (data) {
 				var numberOfEdits = data.numberOfEdits || 0;
