@@ -131,7 +131,7 @@ if (window.self === window.top) {
 		
 		
 
-		//quill.on('text-change', saveText1);
+		quill.on('text-change', html);
 	});
 }
 
