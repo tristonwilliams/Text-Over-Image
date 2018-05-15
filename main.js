@@ -110,19 +110,32 @@ if (window.self === window.top) {
 			sdk.setContent(htmlcontent);
 			sdk.setSuperContent(htmlcontent);
 
-			sdk.getData(function (data) {
-				var numberOfEdits = data.numberOfEdits || 0;
-				sdk.setData({
-					numberOfEdits: numberOfEdits + 1
-					
-			   	document.getElementById('Height').value = imgHeight;
+			
+			let fetchData = () => {
+
+  
+
+    sdk.getData((data) => {
+        if (Object.keys(data).length > 0) {
+            
+      
+          	document.getElementById('Height').value = imgHeight;
             			document.getElementById('Image').value = imgURL;
             			quill.root.innerHTML = html;
 				document.getElementById('width').value = imgWidth;
-				
-					
-				});
-			});
+
+           
+        }
+    });
+
+    console.log(JSON.stringify(imgData));
+}
+			
+			
+			
+			
+			
+			
 
 			sdk.getCentralData(function (central) {
 				var totalNumberOfEdits = central.totalNumberOfEdits || 0;
@@ -130,9 +143,15 @@ if (window.self === window.top) {
 					totalNumberOfEdits: totalNumberOfEdits + 1
 				});
 			});
+			
+			
+			
+			
+			
+			
 		}
 		
-
+window.onload = fetchData;
 
 		quill.on('text-change', saveText);
 	});
